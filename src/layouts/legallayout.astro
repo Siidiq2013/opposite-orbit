@@ -1,0 +1,117 @@
+---
+// src/layouts/LegalLayout.astro
+const { pageTitle, activePage } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{pageTitle} — Adv. Sadiq Adan Ali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style is:inline>
+    :root {
+      --navy:      #0D1F3C;
+      --gold:      #B5892A;
+      --gold-lt:   #D4AC54;
+      --parchment: #F5F0E8;
+      --mist:      #EAE6DC;
+      --ink:       #1A1A2E;
+      --mid:       #4A5568;
+      --rule:      rgba(181,137,42,0.25);
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+      --max: 900px;
+      --pad: clamp(1.25rem, 5vw, 3rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--parchment); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem var(--pad); background: rgba(13,31,60,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(181,137,42,0.3); }
+    .nav-brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--gold-lt); letter-spacing: 0.02em; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-lt); }
+    .nav-links a.active { border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+    .nav-mobile-toggle { display: none; background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; padding: 0.25rem; }
+
+    /* FOOTER */
+    footer { background: #071426; padding: 2rem var(--pad); text-align: center; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+    .footer-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--gold); }
+
+    /* SECTION COMMONS */
+    .section-inner { max-width: var(--max); margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 1rem; }
+    .rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+
+    /* BUTTONS */
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; background: var(--gold); color: var(--navy); font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border: 1px solid rgba(181,137,42,0.5); color: rgba(255,255,255,0.8); font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-lt); }
+
+    /* INNER PAGE HERO */
+    .page-hero { background: var(--navy); padding: 8rem var(--pad) 4rem; position: relative; overflow: hidden; }
+    .page-hero::before { content: '⚖'; position: absolute; right: -2rem; bottom: -3rem; font-size: clamp(10rem, 25vw, 20rem); line-height: 1; color: rgba(181,137,42,0.06); pointer-events: none; user-select: none; }
+    .page-hero-inner { max-width: var(--max); margin: 0 auto; position: relative; }
+    .page-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; color: #fff; }
+    .page-hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .page-hero-sub { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.55); margin-top: 0.75rem; }
+
+    /* SCROLL ANIMATIONS CODES */
+    [data-fade] { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    [data-fade].visible { opacity: 1; transform: none; }
+
+    @media (max-width: 680px) {
+      .nav-mobile-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(13,31,60,0.98); flex-direction: column; gap: 0; padding: 0.5rem 0; border-bottom: 1px solid rgba(181,137,42,0.2); }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 0.75rem var(--pad); border-bottom: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-brand">Adv. Sadiq Adan Ali</a>
+    <button class="nav-mobile-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/" class={activePage === 'home' ? 'active' : ''}>Home</a></li>
+      <li><a href="/about" class={activePage === 'about' ? 'active' : ''}>About</a></li>
+      <li><a href="/practice" class={activePage === 'practice' ? 'active' : ''}>Practice</a></li>
+      <li><a href="/experience" class={activePage === 'experience' ? 'active' : ''}>Experience</a></li>
+      <li><a href="/skills" class={activePage === 'skills' ? 'active' : ''}>Skills</a></li>
+      <li><a href="/contact" class={activePage === 'contact' ? 'active' : ''}>Contact</a></li>
+    </ul>
+  </nav>
+
+  <slot />
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="/">Home</a><a href="/about">About</a><a href="/practice">Practice</a>
+      <a href="/experience">Experience</a><a href="/skills">Skills</a><a href="/contact">Contact</a>
+    </nav>
+    <p>&copy; 2026 Adv. Sadiq Adan Ali · Mogadishu, Somalia · All rights reserved</p>
+  </footer>
+
+  <script is:inline>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-fade]').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

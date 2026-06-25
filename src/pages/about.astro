@@ -1,0 +1,133 @@
+---
+// src/pages/about.astro
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+
+<LegalLayout pageTitle="About" activePage="about">
+  <style is:inline>
+    .about-body { background: #fff; padding: 5rem var(--pad); }
+    .about-body .section-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--mid); margin-bottom: 1.1rem; font-size: 0.97rem; }
+    
+    .about-quote { background: var(--navy); padding: 2rem 2rem 2rem 2.5rem; border-left: 4px solid var(--gold); margin-bottom: 2rem; }
+    .about-quote blockquote { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.55; }
+    .about-quote cite { display: block; margin-top: 1rem; font-size: 0.78rem; font-style: normal; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+    
+    .skill-group-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .lang-bars { display: grid; gap: 1rem; }
+    .lang-row { display: flex; align-items: center; gap: 1rem; }
+    .lang-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); min-width: 60px; }
+    .lang-bar-track { flex: 1; height: 6px; background: var(--mist); border-radius: 3px; overflow: hidden; }
+    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+    .lang-level { font-size: 0.75rem; color: var(--mid); min-width: 56px; text-align: right; }
+    
+    .objective { background: var(--parchment); padding: 5rem var(--pad); }
+    .objective-text { font-family: var(--serif); font-size: 1.25rem; font-style: italic; color: var(--mid); line-height: 1.75; border-left: 4px solid var(--gold); padding-left: 1.75rem; }
+    
+    /* Premium Profile Image Setup for Sadiq's portrait */
+    .portrait-wrapper {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--mist);
+      padding: 1rem;
+      background: var(--parchment);
+      margin-top: 2rem;
+    }
+    .portrait-card {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background-image: url('/sadiq-portrait.jpg');
+      background-size: cover;
+      background-position: center center;
+      box-shadow: 0 20px 40px rgba(13,31,60,0.08);
+    }
+    @media (max-width: 680px) { .about-body .section-inner { grid-template-columns: 1fr; } }
+  </style>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Who I Am</p>
+      <h1>A Legal Professional<br>Grounded in <em>Evidence</em></h1>
+      <p class="page-hero-sub">Advocate, legal consultant, and data practitioner dedicated to justice and sustainable peace.</p>
+    </div>
+  </header>
+
+  <section class="about-body">
+    <div class="section-inner">
+      <div class="about-text" data-fade>
+        <p class="section-label">Profile</p>
+        <h2 class="section-title" style="color:var(--navy)">Adv. Sadiq Adan Ali</h2>
+        <div class="rule"></div>
+        <p>Adv. Sadiq Adan Ali is a dedicated legal professional and data practitioner with extensive experience in litigation, legal advisory, corporate and commercial law, conflict resolution, and social justice.</p>
+        <p>With over 1,450 cases handled and a strong success record, he combines legal expertise with data analysis and research capabilities to deliver evidence-based solutions for individuals, businesses, organizations, and communities.</p>
+        <p>He is committed to promoting access to justice, child protection, gender-based violence prevention, women's empowerment, and sustainable peacebuilding throughout Somalia.</p>
+        <p>Licensed to practice before the Supreme Courts of the Federal Republic of Somalia (2024), Galmudug State (2021), and Puntland (2020), Adv. Sadiq brings a nationally recognised legal standing across multiple jurisdictions.</p>
+        <p>Beyond the courtroom, he leads Somali Lawyers Without Borders as CEO and serves as General Director of the Galmudug Bar Association — roles through which he advances legal aid, capacity building, and institutional development.</p>
+        <div style="margin-top:2rem;"><a href="/contact" class="btn-primary">Get in Touch</a></div>
+      </div>
+
+      <div data-fade>
+        <div class="about-quote">
+          <blockquote>"Committed to Justice, Research, Data-Driven Solutions, Sustainable Justice, and Sustainable Peace."</blockquote>
+          <cite>— Adv. Sadiq Adan Ali</cite>
+        </div>
+
+        <div class="portrait-wrapper">
+          <div class="portrait-card"></div>
+        </div>
+
+        <div style="margin-top:2.5rem; margin-bottom:2rem;">
+          <p class="skill-group-title">Languages</p>
+          <div class="lang-bars">
+            <div class="lang-row">
+              <span class="lang-name">Somali</span>
+              <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">English</span>
+              <div class="lang-bar-track"><div class="lang-bar-fill" style="width:88%"></div></div>
+              <span class="lang-level">Advanced</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-name">Arabic</span>
+              <div class="lang-bar-track"><div class="lang-bar-fill" style="width:80%"></div></div>
+              <span class="lang-level">Fluent</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="skill-group-title">Key Statistics</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:var(--parchment);padding:1.25rem;border-top:3px solid var(--gold);text-align:center;">
+            <span style="display:block;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1;">1,450+</span>
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--mid);">Cases Handled</span>
+          </div>
+          <div style="background:var(--parchment);padding:1.25rem;border-top:3px solid var(--gold);text-align:center;">
+            <span style="display:block;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1;">89%</span>
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--mid);">Civil Success Rate</span>
+          </div>
+          <div style="background:var(--parchment);padding:1.25rem;border-top:3px solid var(--gold);text-align:center;">
+            <span style="display:block;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1;">271</span>
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--mid);">Disputes Resolved</span>
+          </div>
+          <div style="background:var(--parchment);padding:1.25rem;border-top:3px solid var(--gold);text-align:center;">
+            <span style="display:block;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1;">10+</span>
+            <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--mid);">Research Publications</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="objective">
+    <div class="section-inner">
+      <p class="section-label">Professional Objective</p>
+      <h2 class="section-title">Mission &amp; Vision</h2>
+      <div class="rule"></div>
+      <p class="objective-text" data-fade>
+        To provide high-quality legal services and evidence-based solutions while promoting justice, human rights, peacebuilding, and sustainable development — contributing legal expertise, analytical skills, and research experience to national and international institutions dedicated to advancing the rule of law.
+      </p>
+    </div>
+  </section>
+</LegalLayout>

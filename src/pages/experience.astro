@@ -1,0 +1,125 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+
+<LegalLayout pageTitle="Experience" activePage="experience">
+  <style is:inline>
+    .exp-section { padding: 5rem var(--pad); background: var(--navy); }
+    .exp-section .section-title { color: #fff; }
+    .exp-section .section-label { color: var(--gold-lt); }
+    .timeline { position: relative; padding-left: 1.75rem; border-left: 1px solid var(--rule); }
+    .tl-item { position: relative; margin-bottom: 2.75rem; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -2.17rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+    .tl-role { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: #fff; line-height: 1.3; }
+    .tl-org { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; color: var(--gold); text-transform: uppercase; margin: 0.2rem 0 0.6rem; }
+    .tl-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    
+    .edu-section { background: #fff; padding: 5rem var(--pad); }
+    .edu-list { display: grid; gap: 1rem; }
+    .edu-item { display: flex; align-items: baseline; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--mist); transition: border-color 0.2s; }
+    .edu-item:hover { border-color: var(--gold); }
+    .edu-year { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--gold); min-width: 3rem; flex-shrink: 0; }
+    .edu-name { font-weight: 600; font-size: 0.93rem; color: var(--navy); }
+    .edu-inst { font-size: 0.8rem; color: var(--mid); }
+    
+    .member-section { background: var(--parchment); padding: 5rem var(--pad); }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { padding: 0.75rem 1.5rem; border: 1px solid rgba(181,137,42,0.4); font-size: 0.82rem; font-weight: 500; color: var(--navy); background: #fff; transition: border-color 0.2s, background 0.2s; }
+    .badge:hover { background: var(--navy); color: var(--gold-lt); border-color: var(--navy); }
+  </style>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Career</p>
+      <h1>Leadership &amp;<br><em>Positions</em></h1>
+      <p class="page-hero-sub">A track record of professional leadership, judicial standing, and institutional service across Somalia[cite: 8].</p>
+    </div>
+  </header>
+
+  <section class="exp-section">
+    <div class="section-inner">
+      <p class="section-label">Professional History</p>
+      <h2 class="section-title">Career Timeline</h2>
+      <div class="rule" style="background:rgba(181,137,42,0.5)"></div>
+
+      <div class="timeline">
+        <div class="tl-item" data-fade>
+          <div class="tl-dot"></div>
+          <div class="tl-role">General Director</div>
+          <div class="tl-org">Galmudug Bar Association · 2024 – Present[cite: 8]</div>
+          <p class="tl-desc">Leading institutional development and promoting professional standards within the legal profession across the Galmudug State of Somalia. Overseeing member relations, regulatory compliance, and capacity building for legal practitioners[cite: 8].</p>
+        </div>
+        <div class="tl-item" data-fade>
+          <div class="tl-dot"></div>
+          <div class="tl-role">Chief Executive Officer &amp; Manager</div>
+          <div class="tl-org">Somali Lawyers Without Borders[cite: 8]</div>
+          <p class="tl-desc">Providing strategic leadership and organizational management to advance access to justice, human rights, legal aid, and capacity development initiatives across Somalia. Coordinating outreach, legal clinics, and partnerships with international legal bodies[cite: 8].</p>
+        </div>
+        <div class="tl-item" data-fade>
+          <div class="tl-dot"></div>
+          <div class="tl-role">Co-Founder</div>
+          <div class="tl-org">ANFAC Law Firm[cite: 8]</div>
+          <p class="tl-desc">Co-founded ANFAC Law Firm to provide professional legal representation, consultancy, dispute resolution services, and corporate legal solutions to individuals, businesses, and institutions across Somalia[cite: 8].</p>
+        </div>
+        <div class="tl-item" data-fade>
+          <div class="tl-dot"></div>
+          <div class="tl-role">Licensed Advocate — Federal Supreme Court</div>
+          <div class="tl-org">Federal Republic of Somalia · 2024[cite: 8]</div>
+          <p class="tl-desc">Granted Advocate Certificate by the Supreme Court of the Federal Republic of Somalia. Also certified by the Supreme Courts of Puntland (2020) and Galmudug State (2021), establishing multi-jurisdictional standing[cite: 8].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="edu-section">
+    <div class="section-inner">
+      <p class="section-label">Academic Background</p>
+      <h2 class="section-title">Education</h2>
+      <div class="rule"></div>
+      <div class="edu-list" data-fade>
+        <div class="edu-item">
+          <span class="edu-year">2025</span>
+          <div>
+            <div class="edu-name">Bachelor of Social Work[cite: 8]</div>
+            <div class="edu-inst">Green Hope University[cite: 8]</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2021</span>
+          <div>
+            <div class="edu-name">Associate Degree in Social Work[cite: 8]</div>
+            <div class="edu-inst">East Africa University[cite: 8]</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2019</span>
+          <div>
+            <div class="edu-name">Bachelor of Laws (LL.B)[cite: 8]</div>
+            <div class="edu-inst">Daha International University[cite: 8]</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2019</span>
+          <div>
+            <div class="edu-name">Advanced English Certificate[cite: 8]</div>
+            <div class="edu-inst">Islamia University[cite: 8]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="member-section">
+    <div class="section-inner">
+      <p class="section-label">Affiliations</p>
+      <h2 class="section-title">Professional Memberships</h2>
+      <div class="rule"></div>
+      <div class="badge-list" data-fade>
+        <span class="badge">Puntland Bar Association · Member since 2019[cite: 8]</span>
+        <span class="badge">Galmudug Bar Association · Member since 2020 · Director since 2024[cite: 8]</span>
+        <span class="badge">Somali Bar Association · Member since 2024[cite: 8]</span>
+      </div>
+    </div>
+  </section>
+</LegalLayout>

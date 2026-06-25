@@ -1,0 +1,123 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+
+<LegalLayout pageTitle="Contact" activePage="contact">
+  <style is:inline>
+    .contact-section { background: var(--navy); padding: 5rem var(--pad); }
+    .contact-section .section-title { color: #fff; }
+    .contact-section .section-label { color: var(--gold-lt); }
+    .contact-section .rule { background: rgba(181,137,42,0.5); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-intro { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.65); margin-bottom: 2rem; line-height: 1.7; }
+    .contact-items { display: grid; gap: 1.25rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .ci-icon { width: 40px; height: 40px; background: rgba(181,137,42,0.12); border: 1px solid rgba(181,137,42,0.3); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
+    .ci-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
+    .ci-value { font-size: 0.92rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    .ci-value a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; display: block; }
+    .ci-value a:hover { color: var(--gold-lt); }
+    .objective-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(181,137,42,0.2); padding: 2rem; }
+    .objective-box p { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.75; }
+    
+    .cta-section { background: var(--gold); padding: 4rem var(--pad); text-align: center; }
+    .cta-section h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+    .cta-section p { color: rgba(13,31,60,0.7); max-width: 520px; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+    .btn-dark { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; background: var(--navy); color: var(--gold-lt); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-dark:hover { background: #0a1828; }
+    @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Connect</p>
+      <h1>Get in <em>Touch</em></h1>
+      <p class="page-hero-sub">Reach out for legal representation, consultancy, or partnership on justice and peacebuilding initiatives[cite: 6].</p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div data-fade>
+          <p class="section-label" style="color:var(--gold-lt)">Direct Contact</p>
+          <h2 class="section-title">Reach Out</h2>
+          <div class="rule" style="background:rgba(181,137,42,0.5)"></div>
+          <p class="contact-intro">Whether you need legal representation, consultancy, or partnership for justice and peacebuilding initiatives — reach out directly[cite: 6].</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value">
+                  <a href="mailto:avv.sadiq@mail.com">avv.sadiq@mail.com[cite: 6]</a>
+                  <a href="mailto:sadiq@somlawyers.so">sadiq@somlawyers.so[cite: 6]</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-value">
+                  <a href="tel:+252613741177">+252 613 741 177[cite: 6]</a>
+                  <a href="tel:+252615643237">+252 615 643 237[cite: 6]</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Location</div>
+                <div class="ci-value">Mogadishu, Federal Republic of Somalia[cite: 6]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-fade>
+          <p class="section-label" style="color:rgba(181,137,42,0.7)">Professional Objective</p>
+          <div style="height:0.5rem"></div>
+          <div class="objective-box">
+            <p>To provide high-quality legal services and evidence-based solutions while promoting justice, human rights, peacebuilding, and sustainable development — contributing legal expertise, analytical skills, and research experience to national and international institutions dedicated to advancing the rule of law[cite: 6].</p>
+          </div>
+          <div style="margin-top:2rem;">
+            <p class="section-label" style="color:rgba(181,137,42,0.7);margin-bottom:1rem;">Professional Links</p>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+              <a href="mailto:sadiq@somlawyers.so" style="display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s;">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+                Somali Lawyers Without Borders[cite: 6]
+              </a>
+              <a href="mailto:avv.sadiq@mail.com" style="display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s;">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6l9 6 9-6M3 6v12h18V6"/></svg>
+                ANFAC Law Firm[cite: 6]
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Work Together?[cite: 6]</h2>
+    <p>From individual legal matters to institutional partnerships — Adv. Sadiq is available for consultation[cite: 6].</p>
+    <div class="cta-btns">
+      <a href="mailto:avv.sadiq@mail.com" class="btn-dark">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Send an Email[cite: 6]
+      </a>
+      <a href="tel:+252613741177" class="btn-dark">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Now[cite: 6]
+      </a>
+    </div>
+  </section>
+</LegalLayout>
